@@ -169,10 +169,10 @@ nav {
 .backToTop:focus {
   outline: none;
 }
-/* .backToTop:active {
+.backToTop:active {
   background: var(--primaryWhite);
   color: var(--btnColor);
-} */
+}
 
 footer {
   display: flex;
