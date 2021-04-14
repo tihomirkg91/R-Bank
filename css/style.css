@@ -162,14 +162,16 @@ nav {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-bottom: 5rem;
 }
-.backToTop:hover {
+/* .backToTop:hover {
   background: var(--primaryWhite);
   color: var(--btnColor);
-}
-.backToTop:focus,
-:active,
-:visited {
+} */
+.backToTop:focus {
   outline: none;
+}
+.backToTop:active {
+  background: var(--primaryWhite);
+  color: var(--btnColor);
 }
 
 footer {
