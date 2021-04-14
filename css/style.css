@@ -169,7 +169,7 @@ nav {
 .backToTop:focus {
   outline: none;
 }
-.backToTop:active {
+.backtotop: {
   background: var(--primaryWhite);
   color: var(--btnColor);
 }
@@ -219,8 +219,7 @@ Main-app
 @media screen and (max-width: 768px) {
   .app {
     grid-template-columns: 1fr;
-    width: 90%;
-    padding: 1rem;
+    width: 100%;
     gap: 1rem;
     grid-template-areas:
       "a"
@@ -283,7 +282,7 @@ Main-app
 }
 
 .balance {
-  margin-top: -1rem;
+  margin-top: -2rem;
   grid-area: a;
   text-align: center;
   padding: 1rem;
@@ -393,15 +392,13 @@ Summary
   transition: var(--transition);
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center;
-  align-items: center; */
   margin-top: 0;
 }
 .summary__label {
   margin-top: 2rem;
   margin-left: 0.7rem;
   color: var(--primaryWhite);
-  padding: 0.4rem;
+  padding: 0.2rem;
   border-radius: 1rem;
   background: linear-gradient(rgba(87, 69, 95, 1), rgba(84, 134, 135, 1)),
     var(--primaryBackgroud);
@@ -416,14 +413,14 @@ Summary
   background: linear-gradient(rgb(55, 158, 24), rgba(84, 134, 135, 1)),
     var(--primaryBackgroud);
   border-radius: 1rem;
-  padding: 0.3rem;
-  margin-right: 0.1rem;
+  padding: 0.2rem;
+  margin-right: 0;
 }
 .summary__value--out {
   background: linear-gradient(rgb(238, 66, 36), rgba(84, 134, 135, 1)),
     var(--primaryBackgroud);
   border-radius: 1rem;
-  padding: 0.3rem;
+  padding: 0.2rem;
   margin-right: auto;
 }
 .summary__value--interest {
