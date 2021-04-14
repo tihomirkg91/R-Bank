@@ -221,6 +221,7 @@ Main-app
     grid-template-columns: 1fr;
     width: 100%;
     gap: 1rem;
+    padding: 1rem;
     grid-template-areas:
       "a"
       "b"
@@ -230,9 +231,6 @@ Main-app
       "f"
       "g";
   }
-  /* .balance {
-    max-width: 35rem;
-  } */
 }
 
 @media screen and (min-width: 768px) {
