@@ -209,15 +209,17 @@ btnTransfer.addEventListener("click", function (e) {
     currentAccount.balance >= amount &&
     receiverAcc?.username !== currentAccount.username
   ) {
-    // Doing the transfer
-    currentAccount.movements.push(-amount);
-    receiverAcc.movements.push(amount);
+    setTimeout(function () {
+      // Doing the transfer
+      currentAccount.movements.push(-amount);
+      receiverAcc.movements.push(amount);
 
-    // Update UI
-    updateUI(currentAccount);
-    sectionMessage.scrollIntoView({ behavior: "smooth" });
-    newMessage.style.opacity = 1;
-    newMessage.textContent = "successful transfer";
+      // Update UI
+      updateUI(currentAccount);
+      sectionMessage.scrollIntoView({ behavior: "smooth" });
+      newMessage.style.opacity = 1;
+      newMessage.textContent = "successful transfer";
+    }, 3500);
   }
 });
 
@@ -230,14 +232,16 @@ btnLoan.addEventListener("click", function (e) {
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
   ) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    // Update UI
-    updateUI(currentAccount);
-    sectionMessage.scrollIntoView({ behavior: "smooth" });
-    newMessage.style.opacity = 1;
-    newMessage.textContent = "your loan is approved";
+      // Update UI
+      updateUI(currentAccount);
+      sectionMessage.scrollIntoView({ behavior: "smooth" });
+      newMessage.style.opacity = 1;
+      newMessage.textContent = "your loan is approved";
+    }, 3500);
   }
   inputLoanAmount.value = "";
 });

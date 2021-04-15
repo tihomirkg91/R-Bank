@@ -23,7 +23,6 @@ Global-styles
   box-sizing: border-box;
 }
 body {
-  cursor: default;
   font-family: "Cairo", sans-serif;
   background: linear-gradient(
       to bottom,
