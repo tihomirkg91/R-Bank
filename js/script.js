@@ -218,7 +218,7 @@ btnTransfer.addEventListener("click", function (e) {
       updateUI(currentAccount);
       sectionMessage.scrollIntoView({ behavior: "smooth" });
       newMessage.style.opacity = 1;
-      newMessage.textContent = "successful transfer";
+      newMessage.textContent = "transfer completed";
     }, 3500);
   }
 });
@@ -240,7 +240,7 @@ btnLoan.addEventListener("click", function (e) {
       updateUI(currentAccount);
       sectionMessage.scrollIntoView({ behavior: "smooth" });
       newMessage.style.opacity = 1;
-      newMessage.textContent = "your loan is approved";
+      newMessage.textContent = " loan approved";
     }, 3500);
   }
   inputLoanAmount.value = "";
