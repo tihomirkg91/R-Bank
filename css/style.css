@@ -5,7 +5,7 @@ Variables
 */
 :root {
   --primaryBackgroud: rgb(87, 69, 95);
-  --primaryColor: rgb(84, 134, 135);
+  --primaryColor: #548687;
   --primaryWhite: #fff;
   --transition: all 0.5s linear;
   --spacing: 0.3rem;
@@ -73,7 +73,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
+  margin-left: 1rem;
 }
 
 .login {
