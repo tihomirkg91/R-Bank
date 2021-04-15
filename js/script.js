@@ -34,6 +34,8 @@ const accounts = [account1, account2, account3, account4];
 
 /////////////////////////////////////////////////
 // Elements
+const newMessage = document.querySelector(".new__message");
+const sectionMessage = document.querySelector(".message-centar");
 const section = document.querySelector(".backToTop");
 const backToTop = document.querySelector(".top");
 const loginBtn = document.querySelector(".login__btn");
@@ -137,7 +139,7 @@ const updateUI = function (acc) {
 
 const startLogOutTimer = function () {
   //set time
-  let time = 500;
+  let time = 600;
 
   //Call the timer every second
   setInterval(function () {
@@ -213,6 +215,9 @@ btnTransfer.addEventListener("click", function (e) {
 
     // Update UI
     updateUI(currentAccount);
+    sectionMessage.scrollIntoView({ behavior: "smooth" });
+    newMessage.style.opacity = 1;
+    newMessage.textContent = "successful transfer";
   }
 });
 
@@ -230,6 +235,9 @@ btnLoan.addEventListener("click", function (e) {
 
     // Update UI
     updateUI(currentAccount);
+    sectionMessage.scrollIntoView({ behavior: "smooth" });
+    newMessage.style.opacity = 1;
+    newMessage.textContent = "your loan is approved";
   }
   inputLoanAmount.value = "";
 });
