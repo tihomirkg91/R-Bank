@@ -78,7 +78,7 @@ nav {
 
 .login {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   margin-right: 0;
   width: 45vw;
   height: 3.5rem;
@@ -92,6 +92,7 @@ nav {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right: 1rem;
+  margin-left: auto;
   max-width: 10rem;
   border: none;
   font-family: inherit;
@@ -101,6 +102,13 @@ nav {
   transition: var(--transition);
   border-radius: 1rem;
   text-align: center;
+}
+.login__input {
+  margin-right: 0;
+}
+.login__input--pin {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
 }
 
 .login__input:focus {
@@ -128,50 +136,114 @@ nav {
 Media-Queries
 ================
 */
-@media screen and (max-width: 768px) {
-  .app {
-    grid-template-columns: 1fr;
-    width: 100%;
-    gap: 1rem;
-    padding: 1rem;
-    grid-template-areas:
-      "a"
-      "h"
-      "b"
-      "c"
-      "d"
-      "e"
-      "f"
-      "g";
+@media screen and (max-width: 1200px) {
+  .message-centar {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+    margin-bottom: 1rem;
+  }
+  .balance {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+    margin-bottom: 1rem;
+  }
+  .movements {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+  }
+  .summary {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+    margin-bottom: 1rem;
+  }
+  .operation--transfer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+    margin-bottom: 1rem;
+  }
+  .operation--loan {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+    margin-bottom: 1rem;
+  }
+  .operation--close {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+    margin-bottom: 1rem;
+  }
+  .backToTop {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -1rem;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 1201px) {
   .app {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
-    gap: 1rem;
-    padding: 1rem;
     grid-template-areas:
-      "a h"
-      "d b"
-      "e b "
-      "f c"
-      "g g";
+      "a b"
+      "c f"
+      "c g"
+      "d e"
+      "h h";
   }
-  .summary {
+  .message-centar {
+    margin-left: auto;
+    margin-right: 1rem;
+    min-width: 35rem;
     margin-bottom: 1rem;
   }
-  .login__input {
-    margin-right: 1rem;
+  .balance {
+    min-width: 35rem;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+  .movements {
+    min-width: 35rem;
     margin-left: auto;
-  }
-
-  .login__input--pin {
     margin-right: 1rem;
-    margin-left: 1rem;
   }
-
+  .summary {
+    min-width: 35rem;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  /* .summary__label {
+    margin-top: rem;
+  }
+  .summary__value {
+    margin-bottom: -10rem;
+  } */
+  .operation--transfer {
+    min-width: 35rem;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+  .operation--loan {
+    min-width: 35rem;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+  .operation--close {
+    min-width: 35rem;
+    margin-right: auto;
+  }
+  .backToTop {
+    margin-top: 2rem;
+    margin-bottom: -1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .login__btn:hover,
   .form__btn--close:hover,
   .backToTop:hover,
@@ -184,21 +256,6 @@ Media-Queries
     background: var(--primaryWhite);
     color: var(--btnColor);
   }
-  .message-centar {
-    margin-top: -2rem;
-  }
-}
-@media screen and (min-width: 1170px) {
-  .app {
-    width: 85%;
-  }
-  .login__input--pin {
-    margin-right: 4rem;
-    margin-left: 1rem;
-  }
-  /* .logo {
-    margin-left: 10rem;
-  } */
 }
 
 /* 
@@ -212,14 +269,12 @@ Main-app
 }
 
 .app {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 1rem;
+  padding: 2rem;
   margin-bottom: 2.6rem;
-  margin-left: auto;
-  margin-right: auto;
   transition: all 2.5s ease-in-out;
   opacity: 1;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* 
 ================
@@ -227,7 +282,7 @@ Message-centar
 ================
 */
 .message-centar {
-  grid-area: h;
+  grid-area: a;
   background-color: var(--primaryColor);
   border-radius: 1rem;
   transition: var(--transition);
@@ -236,7 +291,6 @@ Message-centar
   text-transform: uppercase;
   letter-spacing: var(--spacing);
   color: var(--primaryWhite);
-  min-height: 10rem;
   padding: 0.5rem 0.7rem;
   cursor: default;
 }
@@ -252,7 +306,6 @@ Message-centar
   text-transform: uppercase;
   letter-spacing: var(--spacing);
   color: var(--primaryWhite);
-
   border-radius: 1rem;
   padding: 0.2rem;
   background: linear-gradient(rgb(55, 158, 24), rgb(0, 0, 0, 0.3));
@@ -264,6 +317,7 @@ Message-centar
   letter-spacing: var(--spacing);
   color: var(--primaryWhite);
   margin-top: 1rem;
+  margin-bottom: 2rem;
   border-radius: 1rem;
   padding: 0.2rem;
   background: linear-gradient(rgb(55, 158, 24), rgb(0, 0, 0, 0.3));
@@ -276,8 +330,7 @@ Balance
 ================
 */
 .balance {
-  margin-top: -2rem;
-  grid-area: a;
+  grid-area: b;
   text-align: center;
   padding: 1rem;
   background: var(--primaryColor);
@@ -325,22 +378,23 @@ Movements
 ================
 */
 .movements {
-  grid-area: b;
+  grid-area: c;
   background-color: var(--primaryColor);
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  margin-bottom: -1rem;
   transition: var(--transition);
   cursor: default;
 }
 
 .movements__row {
+  padding: 0.1rem 0 0.1rem 0;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--primaryBackgroud);
 }
 
 .movements__type--deposit {
+  margin-bottom: 0.1rem;
   font-size: 0.9rem;
   text-transform: uppercase;
   color: var(--primaryWhite);
@@ -381,18 +435,17 @@ Summary
 */
 
 .summary {
-  grid-area: c;
+  grid-area: d;
   background: var(--primaryColor);
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   transition: var(--transition);
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0;
   cursor: default;
 }
 .summary__label {
-  margin-top: 2rem;
+  max-height: 2.5rem;
   margin-left: 0.7rem;
   color: var(--primaryWhite);
   padding: 0.2rem;
@@ -401,7 +454,7 @@ Summary
     var(--primaryBackgroud);
 }
 .summary__value {
-  margin-top: 2rem;
+  max-height: 2.5rem;
   color: var(--primaryWhite);
   font-weight: 600;
   margin-right: auto;
@@ -452,10 +505,10 @@ Transfer money
 ================
 */
 .operation--transfer {
-  min-width: 22rem;
-  grid-area: e;
+  grid-area: f;
   border-radius: 1rem;
   background: var(--primaryColor);
+  padding: 1rem 0 0 0;
 }
 .form--transfer {
   display: flex;
@@ -505,6 +558,7 @@ Transfer money
   transform: var(--transformScale);
 }
 .form__btn--transfer {
+  margin-top: 1rem;
   width: 100%;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -527,10 +581,10 @@ Loan
 ================
 */
 .operation--loan {
-  grid-area: f;
+  padding: 1rem 0 0 0;
+  grid-area: g;
   background: var(--primaryColor);
   border-radius: 1rem;
-  margin-bottom: 1rem;
 }
 .form__label--loan {
   display: flex;
@@ -539,6 +593,7 @@ Loan
   transition: var(--transition);
 }
 .form__btn--loan {
+  margin-top: 1rem;
   width: 100%;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -561,7 +616,8 @@ Close-acc
 ================
 */
 .operation--close {
-  grid-area: d;
+  padding: 1rem 0 0 0;
+  grid-area: e;
   background: var(--primaryColor);
   border-radius: 1rem;
 }
@@ -571,6 +627,7 @@ Close-acc
   align-items: center;
 }
 .form__btn--close {
+  margin-top: 1rem;
   width: 100%;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -591,10 +648,9 @@ Close-acc
 Back to top
 ================
 */
+
 .backToTop {
-  grid-area: g;
-}
-.backToTop {
+  grid-area: h;
   width: 200px;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -603,19 +659,11 @@ Back to top
   color: var(--primaryWhite);
   padding: 0.375rem 0.75rem;
   letter-spacing: var(--spacing);
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
   transition: var(--transition);
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  border-bottom: 5rem;
-}
-.backtotop {
-  background: var(--primaryWhite);
-  color: var(--btnColor);
 }
 
 /* 
