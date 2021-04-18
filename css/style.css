@@ -86,6 +86,7 @@ nav {
   border-radius: 1rem;
   opacity: 1;
   border: transparent;
+  transform: translateY(-100vh);
 }
 
 .login__input {
@@ -116,6 +117,7 @@ nav {
 }
 
 .login__btn {
+  transform: translateY(-100vh);
   width: 100%;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -131,6 +133,11 @@ nav {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
+.login__input-hidden,
+.login__btn-hidden {
+  transform: translateY(0);
+}
+
 /* 
 ================
 Media-Queries
@@ -212,18 +219,17 @@ Media-Queries
     min-width: 35rem;
     margin-left: auto;
     margin-right: 1rem;
+    margin-bottom: -13rem;
+    overflow-y: hidden;
+    max-height: 39rem;
   }
   .summary {
+    margin-top: 11rem;
+    max-height: 8rem;
     min-width: 35rem;
     margin-left: auto;
     margin-right: 1rem;
   }
-  /* .summary__label {
-    margin-top: rem;
-  }
-  .summary__value {
-    margin-bottom: -10rem;
-  } */
   .operation--transfer {
     min-width: 35rem;
     margin-right: auto;
@@ -387,15 +393,14 @@ Movements
 }
 
 .movements__row {
-  padding: 0.1rem 0 0.1rem 0;
+  padding: 2.9px 0 2.9px 0;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--primaryBackgroud);
 }
 
 .movements__type--deposit {
-  margin-bottom: 0.1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   color: var(--primaryWhite);
   padding: 0.5rem;
@@ -406,7 +411,7 @@ Movements
   font-weight: 600;
 }
 .movements__type--withdrawal {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   color: var(--primaryWhite);
   padding: 0.5rem;
@@ -423,7 +428,7 @@ Movements
   margin-left: auto;
   margin-right: 0.7rem;
   color: var(--primaryWhite);
-  padding: 0.4rem;
+  padding: 0.2rem;
   border-radius: 10px;
   background: linear-gradient(rgba(87, 69, 95, 1), rgba(84, 134, 135, 1)),
     var(--primaryBackgroud);

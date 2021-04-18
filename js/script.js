@@ -166,8 +166,8 @@ btnLogin.addEventListener("click", function (e) {
       currentAccount.owner.split(" ")[0]
     }`;
     // containerApp.style.opacity = 1;
-    login.style.opacity = 0;
-    loginBtn.style.opacity = 0;
+    login.classList.remove("login__input-hidden");
+    loginBtn.classList.remove("login__btn-hidden");
     containerApp.classList.remove("app-hidden");
 
     // Clear input fields
