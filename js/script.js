@@ -123,23 +123,28 @@ const updateUI = function (acc) {
 };
 
 const startLogOutTimer = function () {
-  //set time
-  let time = 600;
-
-  //Call the timer every second
-  setInterval(function () {
+  const tick = function () {
     //In each call, print the time
     labelTimer.textContent = time;
 
-    //decrese 1s
-    time--;
-
     //when 0 seconds log out user
-    if (time === -1) {
+    if (time === 0) {
+      clearInterval(timer);
       location.reload();
     }
-  }, 1000);
+    //decrese 1s
+    time--;
+  };
+
+  //set time
+  let time = 555;
+
+  //Call the timer every second
+  tick();
+  const timer = setInterval(tick, 1000);
+  return timer;
 };
+
 ///////////////////////////////////////
 // Date
 const now = new Date();
@@ -150,7 +155,7 @@ labelDate.textContent = `${date}/${month}/${year}`;
 
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 
 btnLogin.addEventListener("click", function (e) {
   // Prevent form from submitting
@@ -169,12 +174,16 @@ btnLogin.addEventListener("click", function (e) {
     login.classList.remove("login__input-hidden");
     loginBtn.classList.remove("login__btn-hidden");
     containerApp.classList.remove("app-hidden");
+    containerApp.style.opacity = 1;
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = "";
     inputLoginPin.blur();
 
-    startLogOutTimer();
+    //timer
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -247,9 +256,13 @@ btnClose.addEventListener("click", function (e) {
     // Delete account
     accounts.splice(index, 1);
 
-    // Hide UI
+    // Update UI
     containerApp.style.opacity = 0;
-    location.reload();
+    login.classList.add("login__input-hidden");
+    loginBtn.classList.add("login__btn-hidden");
+    setTimeout(function () {
+      containerApp.classList.add("app-hidden");
+    }, 2200);
   }
 
   inputCloseUsername.value = inputClosePin.value = "";
