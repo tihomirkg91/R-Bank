@@ -20,6 +20,9 @@ const accounts = [account1, account2];
 
 /////////////////////////////////////////////////
 // Elements
+const menuBtn = document.querySelector(".menu__btn");
+const menuLinks = document.querySelector(".menu-links");
+const links = document.querySelectorAll(".menu-links li");
 const newMessage = document.querySelector(".new__message");
 const sectionMessage = document.querySelector(".message-centar");
 const section = document.querySelector(".backToTop");
@@ -53,6 +56,7 @@ const inputClosePin = document.querySelector(".form__input--pin");
 
 /////////////////////////////////////////////////
 // Functions
+
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
 
@@ -277,7 +281,14 @@ btnSort.addEventListener("click", function (e) {
 console.log(
   "(username-tt pasword-1111),(username-jd pasword-2222),(username-stw pasword-3333),(username-ss pasword-4444),"
 );
-
+///////////
+//Back to top
 section.addEventListener("click", function (e) {
   backToTop.scrollIntoView({ behavior: "smooth" });
+});
+
+//Menu-btn
+menuBtn.addEventListener("click", () => {
+  menuLinks.classList.toggle("menu-links-open");
+  backToTop.classList.toggle("nav-hidden");
 });

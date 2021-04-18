@@ -24,13 +24,8 @@ Global-styles
 }
 body {
   font-family: "Cairo", sans-serif;
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 1)
-    ),
-    center/cover no-repeat fixed;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
+    center/cover;
   background-attachment: fixed;
 }
 .login__btn:focus,
@@ -52,7 +47,7 @@ Navigation
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   background: var(--primaryColor);
   object-fit: cover;
   color: var(--primaryWhite);
@@ -60,7 +55,9 @@ nav {
   height: 3.5rem;
   border: transparent;
   cursor: default;
+  margin-bottom: -1px;
 }
+
 .rBank {
   font-size: 1.4rem;
   font-weight: 600;
@@ -131,13 +128,61 @@ nav {
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .login__input-hidden,
 .login__btn-hidden {
   transform: translateY(0);
 }
+.menu__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
 
+.line {
+  justify-self: center;
+  align-self: center;
+  background: var(--btnColor);
+  border-radius: 1rem;
+  border: transparent;
+  height: 5px;
+  width: 30px;
+  margin: 2px;
+}
+
+.menu-links {
+  height: 100vh;
+  width: 100%;
+  background: var(--primaryColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  position: fixed;
+  clip-path: circle(100px at 100% -50%);
+  -webkit-clip-path: circle(100px at 100% -50%);
+  transition: var(--transition);
+}
+.menu-links a {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--primaryWhite);
+  text-decoration: none;
+  letter-spacing: var(--spacing);
+  text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+}
+.menu-links-open {
+  clip-path: circle(1200px at 100% -50%);
+  -webkit-clip-path: circle(1200px at 100% -50%);
+  z-index: 2;
+}
 /* 
 ================
 Media-Queries
@@ -189,7 +234,7 @@ Media-Queries
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -1rem;
+    margin-bottom: 1.4rem;
   }
 }
 
@@ -246,7 +291,7 @@ Media-Queries
   }
   .backToTop {
     margin-top: 2rem;
-    margin-bottom: -1rem;
+    margin-bottom: 1.4rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -276,11 +321,15 @@ Main-app
 
 .app {
   padding: 2rem;
-  margin-bottom: 2.6rem;
   transition: all 2.5s ease-in-out;
   opacity: 1;
   margin-right: auto;
   margin-left: auto;
+  margin-top: -2rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+    center/cover;
 }
 /* 
 ================
@@ -299,6 +348,7 @@ Message-centar
   color: var(--primaryWhite);
   padding: 0.5rem 0.7rem;
   cursor: default;
+  box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.5);
 }
 .message__label {
   font-weight: 600;
@@ -343,6 +393,7 @@ Balance
   border-radius: 1rem;
   transition: var(--transition);
   cursor: default;
+  box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.5);
 }
 .welcome {
   font-size: 0.6rem;
@@ -390,6 +441,7 @@ Movements
   border-top-right-radius: 1rem;
   transition: var(--transition);
   cursor: default;
+  box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .movements__row {
@@ -501,7 +553,6 @@ Summary
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* 
@@ -514,6 +565,7 @@ Transfer money
   border-radius: 1rem;
   background: var(--primaryColor);
   padding: 1rem 0 0 0;
+  box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.5);
 }
 .form--transfer {
   display: flex;
@@ -577,7 +629,6 @@ Transfer money
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* 
@@ -590,6 +641,7 @@ Loan
   grid-area: g;
   background: var(--primaryColor);
   border-radius: 1rem;
+  box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.5);
 }
 .form__label--loan {
   display: flex;
@@ -612,7 +664,6 @@ Loan
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* 
@@ -646,7 +697,6 @@ Close-acc
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 /* 
 ================
@@ -668,7 +718,6 @@ Back to top
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* 
