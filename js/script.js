@@ -179,6 +179,7 @@ btnLogin.addEventListener("click", function (e) {
     loginBtn.classList.remove("login__btn-hidden");
     containerApp.classList.remove("app-hidden");
     containerApp.style.opacity = 1;
+    menuBtn.classList.remove("menu__btn-hidden");
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = "";
@@ -264,6 +265,7 @@ btnClose.addEventListener("click", function (e) {
     containerApp.style.opacity = 0;
     login.classList.add("login__input-hidden");
     loginBtn.classList.add("login__btn-hidden");
+    menuBtn.classList.add("menu__btn-hidden");
     setTimeout(function () {
       containerApp.classList.add("app-hidden");
     }, 2200);
