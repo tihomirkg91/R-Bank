@@ -47,7 +47,6 @@ Navigation
 nav {
   display: flex;
   align-items: center;
-  /* justify-content: space-evenly; */
   background: var(--primaryColor);
   object-fit: cover;
   color: var(--primaryWhite);
@@ -134,6 +133,7 @@ nav {
 }
 /* Menu btn */
 .menu__btn {
+  z-index: 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,8 +175,8 @@ nav {
   align-items: center;
   list-style: none;
   position: fixed;
-  clip-path: circle(100px at 100% -50%);
-  -webkit-clip-path: circle(100px at 100% -50%);
+  clip-path: circle(50px at 95% -20%);
+  -webkit-clip-path: circle(50px at 95% -20%);
   transition: var(--transition);
   padding: 0 1rem 6rem 1rem;
 }
@@ -192,9 +192,8 @@ nav {
   cursor: pointer;
 }
 .menu-links-open {
-  clip-path: circle(2000px at 100% -50%);
-  -webkit-clip-path: circle(2000px at 100% -50%);
-  z-index: 2;
+  clip-path: circle(2000px at 95% -20%);
+  -webkit-clip-path: circle(2000px at 95% -20%);
 }
 
 /* 
@@ -331,7 +330,7 @@ Media-Queries
 
 /* 
 ================
-Main-app
+App
 ================
 */
 .app-hidden {
@@ -375,7 +374,6 @@ Message-centar
   text-align: center;
   margin-bottom: 0.5rem;
 }
-
 .logout-timer {
   width: 100%;
   font-size: 0.6rem;
@@ -407,7 +405,6 @@ Message-centar
     rgb(25, 221, 208, 0.3)
   );
 }
-
 /* 
 ================
 Balance
@@ -430,7 +427,6 @@ Balance
   letter-spacing: var(--spacing);
   color: var(--primaryWhite);
 }
-
 .balance__label {
   font-weight: 600;
   width: 100%;
@@ -439,11 +435,9 @@ Balance
   letter-spacing: var(--spacing);
   color: var(--primaryWhite);
 }
-
 .balance__date {
   color: var(--primaryWhite);
 }
-
 .balance__value {
   color: var(--primaryWhite);
   font-weight: 600;
@@ -460,7 +454,6 @@ Balance
   margin-right: auto;
   opacity: 1;
 }
-
 /* 
 ================
 Movements
@@ -475,14 +468,12 @@ Movements
   cursor: default;
   box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.5);
 }
-
 .movements__row {
   padding: 2.9px 0 2.9px 0;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--primaryBackgroud);
 }
-
 .movements__type--deposit {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -505,7 +496,6 @@ Movements
     var(--primaryBackgroud);
   font-weight: 600;
 }
-
 .movements__value {
   font-weight: 600;
   font-size: 1rem;
@@ -522,7 +512,6 @@ Movements
 Summary
 ================
 */
-
 .summary {
   grid-area: d;
   background: var(--primaryColor);
@@ -569,7 +558,6 @@ Summary
   padding: 0.3rem;
   margin-right: 0.7rem;
 }
-
 .btn--sort {
   align-self: flex-end;
   width: 100%;
@@ -586,7 +574,6 @@ Summary
   border: 2px solid transparent;
   cursor: pointer;
 }
-
 /* 
 ================
 Transfer money
@@ -662,7 +649,6 @@ Transfer money
   border: 2px solid transparent;
   cursor: pointer;
 }
-
 /* 
 ================
 Loan
@@ -697,7 +683,6 @@ Loan
   border: 2px solid transparent;
   cursor: pointer;
 }
-
 /* 
 ================
 Close-acc
@@ -735,7 +720,6 @@ Close-acc
 Back to top
 ================
 */
-
 .backToTop {
   grid-area: h;
   width: 200px;
@@ -751,7 +735,6 @@ Back to top
   border: 2px solid transparent;
   cursor: pointer;
 }
-
 /* 
 ================
 Footer

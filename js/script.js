@@ -62,8 +62,7 @@ const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
 /////////////////////////////////////////////////
-// Functions
-
+//Display movements
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
 
@@ -85,11 +84,13 @@ const displayMovements = function (movements, sort = false) {
   });
 };
 
+//Display balance
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${acc.balance}€`;
 };
 
+//Display summary
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter((mov) => mov > 0)
@@ -111,6 +112,7 @@ const calcDisplaySummary = function (acc) {
   labelSumInterest.textContent = `${interest}€`;
 };
 
+//Create usernames
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -133,6 +135,7 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+//logOut timer
 const startLogOutTimer = function () {
   const tick = function () {
     //In each call, print the time
@@ -156,7 +159,6 @@ const startLogOutTimer = function () {
   return timer;
 };
 
-///////////////////////////////////////
 // Date
 const now = new Date();
 const date = `${now.getDate()}`.padStart(2, 0);
@@ -165,9 +167,9 @@ const year = now.getFullYear();
 labelDate.textContent = `${date}/${month}/${year}`;
 
 ///////////////////////////////////////
-// Event handlers
 let currentAccount, timer;
 
+//Login user
 btnLogin.addEventListener("click", function (e) {
   // Prevent form from submitting
   e.preventDefault();
@@ -201,6 +203,7 @@ btnLogin.addEventListener("click", function (e) {
   }
 });
 
+//Transfer money
 btnTransfer.addEventListener("click", function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
@@ -229,6 +232,7 @@ btnTransfer.addEventListener("click", function (e) {
   }
 });
 
+//Request loan
 btnLoan.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -252,6 +256,7 @@ btnLoan.addEventListener("click", function (e) {
   inputLoanAmount.value = "";
 });
 
+//Close acc
 btnClose.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -287,11 +292,9 @@ btnSort.addEventListener("click", function (e) {
   displayMovements(currentAccount.movements, !sorted);
   sorted = !sorted;
 });
-console.log(
-  "(username-tt pasword-1111),(username-jd pasword-2222),(username-stw pasword-3333),(username-ss pasword-4444),"
-);
-///////////
+////////////////////////////
 //Scrolls
+
 //Back to top
 section.addEventListener("click", function () {
   backToTop.scrollIntoView({ behavior: "smooth" });
@@ -323,5 +326,7 @@ sectionCloseAcc.addEventListener("click", () => {
 //Menu-btn
 menuBtn.addEventListener("click", () => {
   menuLinks.classList.toggle("menu-links-open");
-  backToTop.classList.toggle("nav-hidden");
+  // backToTop.classList.toggle("nav-hidden");
 });
+////////////////////////////////////////////
+console.log("(username-tt pasword-1111),(username-ss pasword-2222),");
