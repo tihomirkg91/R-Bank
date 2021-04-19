@@ -24,6 +24,8 @@ const menuBtn = document.querySelector(".menu__btn");
 const menuLinks = document.querySelector(".menu-links");
 const links = document.querySelectorAll(".menu-links li");
 const newMessage = document.querySelector(".new__message");
+const sectionMovements = document.querySelector(".section__movements");
+const movements = document.querySelector(".movements");
 const sectionMessage = document.querySelector(".message-centar");
 const section = document.querySelector(".backToTop");
 const backToTop = document.querySelector(".top");
@@ -284,9 +286,15 @@ console.log(
   "(username-tt pasword-1111),(username-jd pasword-2222),(username-stw pasword-3333),(username-ss pasword-4444),"
 );
 ///////////
+//Scrolls
 //Back to top
-section.addEventListener("click", function (e) {
+section.addEventListener("click", function () {
   backToTop.scrollIntoView({ behavior: "smooth" });
+});
+//Section movements
+sectionMovements.addEventListener("click", function (e) {
+  movements.scrollIntoView({ behavior: "smooth" });
+  menuLinks.classList.toggle("menu-links-open");
 });
 
 //Menu-btn
