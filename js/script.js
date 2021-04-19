@@ -24,6 +24,11 @@ const menuBtn = document.querySelector(".menu__btn");
 const menuLinks = document.querySelector(".menu-links");
 const links = document.querySelectorAll(".menu-links li");
 const newMessage = document.querySelector(".new__message");
+const sectionCloseAcc = document.querySelector(".section__close-acc");
+const sectionLoan = document.querySelector(".section__loan");
+const operationLoan = document.querySelector(".operation--loan");
+const sectionTransfer = document.querySelector(".section__transfer");
+const operationTransfer = document.querySelector(".operation--transfer");
 const sectionMovements = document.querySelector(".section__movements");
 const movements = document.querySelector(".movements");
 const sectionMessage = document.querySelector(".message-centar");
@@ -292,8 +297,26 @@ section.addEventListener("click", function () {
   backToTop.scrollIntoView({ behavior: "smooth" });
 });
 //Section movements
-sectionMovements.addEventListener("click", function (e) {
+sectionMovements.addEventListener("click", () => {
   movements.scrollIntoView({ behavior: "smooth" });
+  menuLinks.classList.toggle("menu-links-open");
+});
+
+//Section transfer
+sectionTransfer.addEventListener("click", () => {
+  operationTransfer.scrollIntoView({ behavior: "smooth" });
+  menuLinks.classList.toggle("menu-links-open");
+});
+
+//Section loan
+sectionLoan.addEventListener("click", () => {
+  operationLoan.scrollIntoView({ behavior: "smooth" });
+  menuLinks.classList.toggle("menu-links-open");
+});
+
+// Section Close-acc
+sectionCloseAcc.addEventListener("click", () => {
+  operationLoan.scrollIntoView({ behavior: "smooth" });
   menuLinks.classList.toggle("menu-links-open");
 });
 
