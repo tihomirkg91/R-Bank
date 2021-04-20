@@ -278,9 +278,9 @@ btnClose.addEventListener("click", function (e) {
     login.classList.add("login__input-hidden");
     loginBtn.classList.add("login__btn-hidden");
     menuBtn.classList.add("menu__btn-hidden");
-    backToTop.scrollIntoView({ behavior: "smooth" });
     setTimeout(function () {
       containerApp.classList.add("app-hidden");
+      backToTop.scrollIntoView({ behavior: "smooth" });
     }, 2200);
   }
 
