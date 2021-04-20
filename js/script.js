@@ -278,6 +278,7 @@ btnClose.addEventListener("click", function (e) {
     login.classList.add("login__input-hidden");
     loginBtn.classList.add("login__btn-hidden");
     menuBtn.classList.add("menu__btn-hidden");
+    backToTop.scrollIntoView({ behavior: "smooth" });
     setTimeout(function () {
       containerApp.classList.add("app-hidden");
     }, 2200);
@@ -326,7 +327,6 @@ sectionCloseAcc.addEventListener("click", () => {
 //Menu-btn
 menuBtn.addEventListener("click", () => {
   menuLinks.classList.toggle("menu-links-open");
-  // backToTop.classList.toggle("nav-hidden");
 });
 ////////////////////////////////////////////
 console.log("(username-tt pasword-1111),(username-ss pasword-2222),");
