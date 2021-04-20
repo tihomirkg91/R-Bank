@@ -181,14 +181,14 @@ nav {
 }
 .menu-links a {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primaryWhite);
   text-decoration: none;
   letter-spacing: var(--spacing);
   text-transform: uppercase;
   height: 100%;
   width: 100%;
-  margin-left: 7rem;
+  margin-left: 4rem;
   cursor: pointer;
 }
 .menu-links-open {
