@@ -38,7 +38,6 @@ body {
 .login__btn:focus {
   outline: none;
 }
-
 /* 
 ================
 Navigation
@@ -56,7 +55,6 @@ nav {
   cursor: default;
   margin-bottom: -1px;
 }
-
 .rBank {
   font-size: 1.4rem;
   font-weight: 600;
@@ -71,7 +69,6 @@ nav {
   align-items: center;
   margin-left: 1rem;
 }
-
 .login {
   display: flex;
   align-items: center;
@@ -83,7 +80,6 @@ nav {
   border: transparent;
   transform: translateY(-100vh);
 }
-
 .login__input {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -106,11 +102,9 @@ nav {
   margin-right: 1rem;
   margin-left: 0.5rem;
 }
-
 .login__input:focus {
   outline: none;
 }
-
 .login__btn {
   transform: translateY(-100vh);
   width: 100%;
@@ -131,7 +125,6 @@ nav {
 .login__btn-hidden {
   transform: translateY(0);
 }
-/* Menu btn */
 .menu__btn {
   z-index: 4;
   display: flex;
@@ -149,11 +142,9 @@ nav {
 .menu__btn-show {
   transform: translateY(0);
 }
-
 .menu__btn-hidden {
   transform: translateY(-500%);
 }
-
 .line {
   justify-self: center;
   align-self: center;
@@ -164,7 +155,6 @@ nav {
   width: 30px;
   margin: 2px;
 }
-
 .menu-links {
   height: 100vh;
   width: 100%;
@@ -195,13 +185,15 @@ nav {
   clip-path: circle(2000px at 95% -20%);
   -webkit-clip-path: circle(2000px at 95% -20%);
 }
-
 /* 
 ================
 Media-Queries
 ================
 */
 @media screen and (max-width: 1200px) {
+  .app {
+    padding: 2rem;
+  }
   .login {
     margin-right: -4rem;
   }
@@ -252,10 +244,14 @@ Media-Queries
     margin-right: auto;
     margin-bottom: 1.4rem;
   }
+  .btn__operation {
+    margin-top: 1rem;
+  }
 }
 
 @media (min-width: 1201px) {
   .app {
+    padding: 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -285,11 +281,11 @@ Media-Queries
     margin-right: 1rem;
     margin-bottom: -13rem;
     overflow-y: hidden;
-    max-height: 39rem;
+    max-height: 38.5rem;
   }
   .summary {
-    margin-top: 11rem;
-    max-height: 8rem;
+    margin-top: 9.5rem;
+    height: 111px;
     min-width: 35rem;
     margin-left: auto;
     margin-right: 1rem;
@@ -307,10 +303,11 @@ Media-Queries
   .operation--close {
     min-width: 35rem;
     margin-right: auto;
+    max-height: 16rem;
   }
   .backToTop {
     margin-top: 2rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: -0.4rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -326,20 +323,20 @@ Media-Queries
     background: var(--primaryWhite);
     color: var(--btnColor);
   }
+  .btn__operation {
+    margin-top: 1.7rem;
+  }
 }
-
 /* 
 ================
 App
 ================
 */
 .app-hidden {
-  transform: translateX(-250rem);
+  transform: translateX(-100%);
   position: absolute;
 }
-
 .app {
-  padding: 2rem;
   transition: all 2.5s ease-in-out;
   opacity: 1;
   margin-right: auto;
@@ -349,6 +346,21 @@ App
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     center/cover;
+}
+.btn__operation {
+  width: 100%;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  text-transform: uppercase;
+  background: var(--btnColor);
+  color: var(--primaryWhite);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 /* 
 ================
@@ -472,7 +484,7 @@ Movements
   padding: 2.9px 0 2.9px 0;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--primaryBackgroud);
+  border-bottom: 1px solid rgba(34, 41, 40, 0.4);
 }
 .movements__type--deposit {
   font-size: 0.8rem;
@@ -558,22 +570,6 @@ Summary
   padding: 0.3rem;
   margin-right: 0.7rem;
 }
-.btn--sort {
-  align-self: flex-end;
-  width: 100%;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  text-transform: uppercase;
-  background: var(--btnColor);
-  color: var(--primaryWhite);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
 /* 
 ================
 Transfer money
@@ -633,22 +629,6 @@ Transfer money
   transition: var(--transition);
   transform: var(--transformScale);
 }
-.form__btn--transfer {
-  margin-top: 1rem;
-  width: 100%;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  text-transform: uppercase;
-  background: var(--btnColor);
-  color: var(--primaryWhite);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
 /* 
 ================
 Loan
@@ -667,22 +647,6 @@ Loan
   align-items: center;
   transition: var(--transition);
 }
-.form__btn--loan {
-  margin-top: 1rem;
-  width: 100%;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  text-transform: uppercase;
-  background: var(--btnColor);
-  color: var(--primaryWhite);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
 /* 
 ================
 Close-acc
@@ -698,22 +662,6 @@ Close-acc
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.form__btn--close {
-  margin-top: 1rem;
-  width: 100%;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  text-transform: uppercase;
-  background: var(--btnColor);
-  color: var(--primaryWhite);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
-  cursor: pointer;
 }
 /* 
 ================
@@ -753,7 +701,6 @@ footer {
   align-items: center;
   opacity: 0.8;
 }
-
 footer p {
   text-transform: uppercase;
   font-size: 0.5rem;
