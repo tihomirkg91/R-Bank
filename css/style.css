@@ -190,7 +190,7 @@ nav {
 Media-Queries
 ================
 */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1209px) {
   .app {
     padding: 2rem;
   }
@@ -249,7 +249,7 @@ Media-Queries
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1210px) {
   .app {
     padding: 4rem;
     display: grid;
@@ -261,6 +261,7 @@ Media-Queries
       "d e"
       "h h";
   }
+
   .menu__btn {
     display: none;
   }
@@ -341,6 +342,8 @@ App
   opacity: 1;
   margin-right: auto;
   margin-left: auto;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
   margin-top: -2rem;
   width: 100%;
   height: 100%;
