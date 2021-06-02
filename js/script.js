@@ -20,6 +20,7 @@ const accounts = [account1, account2];
 
 /////////////////////////////////////////////////
 // Elements
+const body = document.querySelector("body");
 const menuBtn = document.querySelector(".menu__btn");
 const menuLinks = document.querySelector(".menu-links");
 const links = document.querySelectorAll(".menu-links li");
@@ -304,29 +305,36 @@ section.addEventListener("click", function () {
 sectionMovements.addEventListener("click", () => {
   movements.scrollIntoView({ behavior: "smooth" });
   menuLinks.classList.toggle("menu-links-open");
+  body.classList.toggle("scrollY");
 });
 
 //Section transfer
 sectionTransfer.addEventListener("click", () => {
   operationTransfer.scrollIntoView({ behavior: "smooth" });
   menuLinks.classList.toggle("menu-links-open");
+  body.classList.toggle("scrollY");
 });
 
 //Section loan
 sectionLoan.addEventListener("click", () => {
   operationLoan.scrollIntoView({ behavior: "smooth" });
   menuLinks.classList.toggle("menu-links-open");
+  body.classList.toggle("scrollY");
 });
 
 // Section Close-acc
 sectionCloseAcc.addEventListener("click", () => {
   operationLoan.scrollIntoView({ behavior: "smooth" });
   menuLinks.classList.toggle("menu-links-open");
+  body.classList.toggle("scrollY");
 });
 
 //Menu-btn
 menuBtn.addEventListener("click", () => {
   menuLinks.classList.toggle("menu-links-open");
+  body.classList.toggle("scrollY");
 });
 ////////////////////////////////////////////
-console.log("(username-tt pasword-1111),(username-ss pasword-2222),");
+console.log(
+  "(username-tt password-1111),(username-ss password-2222), Transfer operation can be done only to a existing acc "
+);

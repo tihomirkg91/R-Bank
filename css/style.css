@@ -27,7 +27,14 @@ body {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
     center/cover;
   background-attachment: fixed;
+  overflow-x: hidden;
+  overflow-y: scrollY;
 }
+
+.scrollY {
+  overflow-y: hidden;
+}
+
 .login__btn:focus,
 .form__btn--close:focus,
 .backToTop:focus,
