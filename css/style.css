@@ -342,7 +342,6 @@ App
 */
 .app-hidden {
   display: none;
-  position: absolute;
 }
 .app {
   transition: all 2.5s ease-in-out;
