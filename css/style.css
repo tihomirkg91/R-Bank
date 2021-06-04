@@ -341,13 +341,12 @@ App
 ================
 */
 .app-hidden {
-  transform: translateX(-100%);
+  display: none;
   position: absolute;
-  opacity: 0;
 }
 .app {
   transition: all 2.5s ease-in-out;
-  opacity: 0;
+  opacity: 1;
   margin-right: auto;
   margin-left: auto;
   padding-left: 2rem;
