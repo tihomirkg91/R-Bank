@@ -61,6 +61,7 @@ const inputTransferAmount = document.querySelector(".form__input--amount");
 const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
+
 const loader = document.querySelector(".loader");
 const spin = document.querySelector(".spin");
 
@@ -191,10 +192,10 @@ btnLogin.addEventListener("click", function (e) {
       labelWelcome.textContent = `Welcome back, ${
          currentAccount.owner.split(" ")[0]
       }`;
-      // containerApp.style.opacity = 1;
+
       login.classList.remove("login__input-hidden");
       loginBtn.classList.remove("login__btn-hidden");
-      containerApp.classList.remove("app-hidden");
+      containerApp.classList.add("app_show");
       containerApp.style.opacity = 1;
       menuBtn.classList.remove("menu__btn-hidden");
 
@@ -287,7 +288,7 @@ btnClose.addEventListener("click", function (e) {
       loginBtn.classList.add("login__btn-hidden");
       menuBtn.classList.add("menu__btn-hidden");
       setTimeout(function () {
-         containerApp.classList.add("app-hidden");
+         containerApp.classList.remove("app_show");
          backToTop.scrollIntoView({ behavior: "smooth" });
       }, 2200);
    }
