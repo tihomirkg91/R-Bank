@@ -377,7 +377,8 @@ App
 */
 
 .app {
-   transform: translateX(-100vw);
+   display: none;
+   transform: translateX(-300vw);
    transition: all 2.5s ease-in-out;
    opacity: 1;
    margin-right: auto;
