@@ -71,6 +71,7 @@ setTimeout(function () {
    loader.classList.add("loader_hidden");
    spin.classList.add("spin_hidden");
    containerApp.style.display = "block";
+   body.classList.toggle("scrollY");
 }, 2000);
 //Display movements
 const displayMovements = function (movements, sort = false) {
@@ -194,6 +195,7 @@ btnLogin.addEventListener("click", function (e) {
          currentAccount.owner.split(" ")[0]
       }`;
 
+      body.classList.toggle("scrollY");
       login.classList.remove("login__input-hidden");
       loginBtn.classList.remove("login__btn-hidden");
       containerApp.classList.add("app_show");
@@ -288,6 +290,7 @@ btnClose.addEventListener("click", function (e) {
       login.classList.add("login__input-hidden");
       loginBtn.classList.add("login__btn-hidden");
       menuBtn.classList.add("menu__btn-hidden");
+      body.classList.toggle("scrollY");
       setTimeout(function () {
          containerApp.classList.remove("app_show");
          backToTop.scrollIntoView({ behavior: "smooth" });
