@@ -26,6 +26,7 @@ const menuLinks = document.querySelector(".menu-links");
 const links = document.querySelectorAll(".menu-links li");
 const newMessage = document.querySelector(".new__message");
 const sectionCloseAcc = document.querySelector(".section__close-acc");
+const operationCloseAcc = document.querySelector(".operation--close");
 const sectionLoan = document.querySelector(".section__loan");
 const operationLoan = document.querySelector(".operation--loan");
 const sectionTransfer = document.querySelector(".section__transfer");
@@ -336,7 +337,7 @@ sectionLoan.addEventListener("click", () => {
 
 // Section Close-acc
 sectionCloseAcc.addEventListener("click", () => {
-   operationLoan.scrollIntoView({ behavior: "smooth" });
+   operationCloseAcc.scrollIntoView({ behavior: "smooth" });
    menuLinks.classList.toggle("menu-links-open");
    body.classList.toggle("scrollY");
 });
