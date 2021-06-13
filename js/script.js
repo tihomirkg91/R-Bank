@@ -70,7 +70,7 @@ const spin = document.querySelector(".spin");
 setTimeout(function () {
    loader.classList.add("loader_hidden");
    spin.classList.add("spin_hidden");
-   containerApp.style.display = "block";
+   containerApp.style.display = "grid";
    body.classList.toggle("scrollY");
 }, 2000);
 //Display movements
