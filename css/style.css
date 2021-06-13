@@ -60,7 +60,7 @@ nav {
    height: 3.5rem;
    border: transparent;
    cursor: default;
-   margin-bottom: -1px;
+   margin-bottom: 0;
 }
 .rBank {
    font-size: 1.4rem;
@@ -86,6 +86,7 @@ nav {
    opacity: 1;
    border: transparent;
    transform: translateY(-100vh);
+   z-index: 1;
 }
 .login__input {
    margin-top: 1rem;
@@ -189,8 +190,8 @@ nav {
    cursor: pointer;
 }
 .menu-links-open {
-   clip-path: circle(4000px at 100% -20%);
-   -webkit-clip-path: circle(4000px at 100% -20%);
+   clip-path: circle(2000px at 95% -20%);
+   -webkit-clip-path: circle(2000px at 95% -20%);
 }
 /* ///////////////////////////////// */
 @keyframes spinner {
@@ -208,8 +209,11 @@ nav {
 
 .loader {
    width: 100%;
-   height: 80vh;
+   height: 100vh;
    position: absolute;
+   background: rgb(34, 33, 33);
+   z-index: 2;
+   border-radius: 4%;
 }
 .spin {
    animation: 1.5s linear infinite spinner;
@@ -221,9 +225,9 @@ nav {
    height: 100px;
    width: 100px;
    position: absolute;
-   top: 50%;
+   top: 25%;
    left: 50%;
-   transform: translate3d(-50%, -50%, 0);
+   transform: translate(-25%, -50%);
    will-change: transform;
 }
 /* ///////////////////////// */
@@ -232,19 +236,9 @@ nav {
 Media-Queries
 ================
 */
-@media screen and (max-width: 1209px) {
+@media screen and (max-width: 900px) {
    .app {
       padding: 2rem;
-      grid-template-columns: 1fr;
-      grid-template-areas:
-         "a"
-         "b"
-         "c"
-         "d"
-         "g"
-         "f"
-         "e"
-         "h";
    }
    .login {
       margin-right: -4rem;
@@ -252,49 +246,49 @@ Media-Queries
    .message-centar {
       margin-left: auto;
       margin-right: auto;
-      min-width: 26rem;
-      max-width: 35rem;
+      min-width: 15rem;
+      max-width: 23rem;
       margin-bottom: 1rem;
    }
    .balance {
       margin-left: auto;
       margin-right: auto;
-      min-width: 26rem;
-      max-width: 35rem;
+      min-width: 15rem;
+      max-width: 23rem;
       margin-bottom: 1rem;
    }
    .movements {
       margin-left: auto;
       margin-right: auto;
-      max-width: 35rem;
-      min-width: 26rem;
+      max-width: 23rem;
+      min-width: 15rem;
    }
    .summary {
       margin-left: auto;
       margin-right: auto;
-      max-width: 26rem;
-      min-width: 20rem;
+      max-width: 23rem;
+      min-width: 15rem;
       margin-bottom: 1rem;
    }
    .operation--transfer {
       margin-left: auto;
       margin-right: auto;
-      max-width: 35rem;
-      min-width: 26rem;
+      max-width: 23rem;
+      min-width: 15rem;
       margin-bottom: 1rem;
    }
    .operation--loan {
       margin-left: auto;
       margin-right: auto;
-      max-width: 35rem;
-      min-width: 26rem;
+      max-width: 23rem;
+      min-width: 15rem;
       margin-bottom: 1rem;
    }
    .operation--close {
       margin-left: auto;
       margin-right: auto;
-      max-width: 35rem;
-      min-width: 26rem;
+      max-width: 23rem;
+      min-width: 15rem;
       margin-bottom: 1rem;
    }
    .backToTop {
@@ -308,9 +302,10 @@ Media-Queries
    }
 }
 
-@media (min-width: 1210px) {
+@media (min-width: 901px) {
    .app {
-      padding: 4rem;
+      display: grid;
+      padding: 2rem;
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
          "a b"
@@ -326,16 +321,16 @@ Media-Queries
    .message-centar {
       margin-left: auto;
       margin-right: 1rem;
-      min-width: 35rem;
+      min-width: 25rem;
       margin-bottom: 1rem;
    }
    .balance {
-      min-width: 35rem;
+      min-width: 25rem;
       margin-right: auto;
       margin-bottom: 1rem;
    }
    .movements {
-      min-width: 35rem;
+      min-width: 25rem;
       margin-left: auto;
       margin-right: 1rem;
       margin-bottom: -13rem;
@@ -345,28 +340,28 @@ Media-Queries
    .summary {
       margin-top: 9.5rem;
       height: 111px;
-      min-width: 35rem;
+      max-width: 25rem;
       margin-left: auto;
       margin-right: 1rem;
    }
    .operation--transfer {
-      min-width: 35rem;
+      min-width: 25rem;
       margin-right: auto;
       margin-bottom: 1rem;
    }
    .operation--loan {
-      min-width: 35rem;
+      min-width: 25rem;
       margin-right: auto;
       margin-bottom: 1rem;
    }
    .operation--close {
-      min-width: 35rem;
+      min-width: 25rem;
       margin-right: auto;
       max-height: 16rem;
    }
    .backToTop {
       margin-top: 2rem;
-      margin-bottom: -0.4rem;
+      margin-bottom: 1.5rem;
       margin-left: auto;
       margin-right: auto;
    }
@@ -393,7 +388,7 @@ App
 */
 
 .app {
-   display: none;
+   /* display: none; */
    transform: translateX(-300vw);
    transition: all 2.5s ease-in-out;
    opacity: 1;
