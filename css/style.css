@@ -214,7 +214,7 @@ nav {
    z-index: 2;
    /* border-radius: 4%; */
    backdrop-filter: blur(40rem);
-   backdrop-filter: contrast(100%);
+   /* backdrop-filter: contrast(0); */
 }
 .spin {
    animation: 1.5s linear infinite spinner;
